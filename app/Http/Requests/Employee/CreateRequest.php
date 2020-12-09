@@ -3,12 +3,13 @@
 namespace App\Http\Requests\Employee;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CreateRequest extends FormRequest
 {
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     public function rules()
